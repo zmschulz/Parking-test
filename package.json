@@ -1,0 +1,8 @@
+{
+  "name": "parking-reservations",
+  "version": "1.0.0",
+  "description": "Simple parking slot reservation website (max 3 hours, no overlaps)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

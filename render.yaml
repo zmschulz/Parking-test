@@ -1,0 +1,21 @@
+# Render Blueprint: creates the web service from this repo.
+services:
+  - type: web
+    name: parking-app
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: SESSION_SECRET
+        generateValue: true        # Render creates a random secret and keeps it stable
+      - key: GOOGLE_CLIENT_ID
+        sync: false                # you enter these in the Render dashboard
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: BASE_URL
+        sync: false                # e.g. https://parking-app.onrender.com
+      - key: MAX_RESERVATIONS_PER_DAY
+        value: "1"
